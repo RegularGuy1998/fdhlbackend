@@ -2,6 +2,13 @@ const express = require("express");
 const authRouter = express();
 const userModel = require("../model/userModel");
 const lodash = require('lodash');
+const domain = require("../config/domain")
+const FacebookStrategy = require('passport-facebook').Strategy;
+
+const passport = require("passport")
+authRouter.use((req, res, next) => {
+    next();
+})
 authRouter.post('/login',(req,res) => {
     const { facebookID, name, email, avatarUrl, gender } = req.body
     req.session.user=facebookID;

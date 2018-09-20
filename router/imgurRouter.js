@@ -1,6 +1,5 @@
 const express = require('express');
 const imgurRouter = express.Router();
-const fs = require('fs');
 const imgur = require('imgur')
 
 

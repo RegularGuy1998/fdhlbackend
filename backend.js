@@ -8,6 +8,8 @@ const cors = require('cors');
 
 const passport=require("passport")
 // const passportfb=require("passport-facebook").Strategy
+const userModel = require("./model/userModel");
+const domain =require("./config/domain")
 let backend = express();
 
 
