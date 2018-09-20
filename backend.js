@@ -59,16 +59,16 @@ mongoose.connect(host, function (err) {
 
 //config https
 var fs    = require('fs');
-var https = require('https');
-var options =
- {
-   key:  fs.readFileSync('./privkey.pem'),
-   cert: fs.readFileSync('./fullchain.pem')
- };
+// var https = require('https');
+// var options =
+//  {
+//    key:  fs.readFileSync('./privkey.pem'),
+//    cert: fs.readFileSync('./fullchain.pem')
+//  };
 
- var server = https.createServer(options, backend);
+//  var server = https.createServer(options, backend);
 
- server.listen(process.env.PORT || 8080, err => {
+ backend.listen(process.env.PORT || 8080, err => {
     if (err) {
         console.error(err);
     } else {
