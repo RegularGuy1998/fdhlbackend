@@ -10,7 +10,7 @@ module.exports = function (passport) {
     router.get('/auth/logout', function (req, res, next) {
         // console.log('vao logout');
         req.logout();
-        usertemp=null;
+        usertemp = null;
         return res.redirect('https://localhost:3000');
     });
 
@@ -42,18 +42,18 @@ module.exports = function (passport) {
                 }
                 // console.log(req.session)
                 // console.log(req.user)
-                req.session.save(function(err){
-                    if(err) return res.send("loi")
+                req.session.save(function (err) {
+                    if (err) return res.send("loi")
                     // console.log(req.session)
-                    res.json({session: req.session});
+                    res.json({ session: req.session });
                 });
-                 
+
             });
 
 
         })(req, res, next);
     });
-    router.get('/auth/fb/isLogin',function(req,res){
+    router.get('/auth/fb/isLogin', function (req, res) {
         // console.log("Islogin");
         // console.log(req.session)
     });
@@ -61,11 +61,11 @@ module.exports = function (passport) {
     //     //do something only if user is authenticated
     //     console.log("authenticated")
     // });
-    function checkAuthentication(req,res,next){
-        if(req.isAuthenticated()){
+    function checkAuthentication(req, res, next) {
+        if (req.isAuthenticated()) {
             //req.isAuthenticated() will return true if user is logged in
             next();
-        } else{
+        } else {
             console.log("not auth")
         }
     }
