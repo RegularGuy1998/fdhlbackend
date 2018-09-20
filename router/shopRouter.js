@@ -1,6 +1,6 @@
 const express = require('express');
 const shopRouter = express.Router();
-const shopModel = require('../model/ShopModel');
+const shopModel = require("../model/shopModel.js");
 
 shopRouter.use((req, res, next) => {
     next();
